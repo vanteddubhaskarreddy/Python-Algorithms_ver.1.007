@@ -1,7 +1,6 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        # if len(nums) < 2:
-        #     return [nums[0]*nums[0]]
+        
         k = 0
         for k in range(len(nums)):
             if nums[k]>=0:
