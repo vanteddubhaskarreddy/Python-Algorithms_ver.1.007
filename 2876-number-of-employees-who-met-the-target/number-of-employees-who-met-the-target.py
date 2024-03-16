@@ -1,7 +1,3 @@
 class Solution:
     def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:
-        c = 0
-        for i in hours:
-            if i < target:
-                c+=1
-        return len(hours) - c
+        return sum(i>=target for i in hours)
