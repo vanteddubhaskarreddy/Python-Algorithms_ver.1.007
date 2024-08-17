@@ -7,5 +7,5 @@ class Solution:
                 d[s[j]] -= 1
                 j+=1
             d[s[i]]=1
-            mc = max(mc, d.total())
+            mc = max(mc, i-j+1)
         return mc
