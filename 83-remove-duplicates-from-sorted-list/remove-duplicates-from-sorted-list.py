@@ -9,8 +9,6 @@ class Solution:
         s = set()
         while dummy:
             s.add(dummy.val)
-            if dummy.next and dummy.next.val in s:
-                dummy.next = dummy.next.next
-            else :
-                dummy = dummy.next
+            if dummy.next and dummy.next.val in s: dummy.next = dummy.next.next
+            else :dummy = dummy.next
         return head
