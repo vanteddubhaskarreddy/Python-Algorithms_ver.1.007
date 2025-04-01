@@ -6,7 +6,6 @@
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         d = right - left
-        left_start = left
         r = l = head
         if left == right:
             return head
@@ -17,20 +16,12 @@ class Solution:
             r = r.next
             l = l.next
             left -= 1
-        if left_start>1:
+        if left > 1:
             bl = l
-            l = l.next
-            r = r.next 
+            l, r = l.next, r.next
             bl.next = r
-        else: 
-            bl = None
-        # l = l.next
-        # r = r.next
-        ar = r.next
-        prev = l
-        curr = l.next
-        nextnode = curr.next
-        l.next = ar
+        ar, prev, curr = r.next, l, l.next
+        nextnode, l.next = curr.next, ar
         while prev != r:
             curr.next = prev
             prev = curr
@@ -39,4 +30,4 @@ class Solution:
                 nextnode = nextnode.next   
             else:
                 break
-        return head if left_start > 1 else r
+        return head if left > 1 else r
