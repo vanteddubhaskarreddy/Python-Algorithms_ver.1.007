@@ -9,7 +9,8 @@ class Solution:
             if back > -1:
                 graph[i].append(back)
         
-        q = deque([start])
+        q = deque()
+        q.append(start)
         seen = {start}
 
         while q:
